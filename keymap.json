@@ -1,0 +1,125 @@
+[
+	{
+		"bindings": {
+			"backspace": "editor::Backspace"
+		}
+	},
+ {
+   "context": "Workspace",
+    "bindings": {
+     "h": "vim::Left"
+   }
+ },
+ {
+   "context": "Workspace",
+    "bindings": {
+     "l": "vim::Right"
+   }
+ },
+ {
+   "context": "Workspace",
+   "bindings": {
+     "k": "vim::Up"
+   }
+ },
+ {
+   "context": "Workspace",
+   "bindings": {
+     "j": "vim::Down"
+   }
+ },
+ {
+   "context": "Workspace",
+   "bindings": {
+     "y": "vim::Yank"
+   }
+ },
+ {
+   "context": "Workspace",
+   "bindings": {
+     "u": "vim::Undo"
+   }
+ },
+ {
+   "bindings": {
+     "ctrl-r": "vim::Redo"
+   }
+ },
+ {
+   "context": "Workspace",
+   "bindings": {
+     "p": "vim::Paste"
+   }
+ },
+ {
+   "context": "Workspace",
+   "bindings": {
+     "?": "vim::Search"
+   }
+ },
+ {
+   "bindings": {
+     "y y": "vim::YankLine"
+   }
+ },
+ {
+   "bindings": {
+     "a": "vim::InsertAfter"
+   }
+ },
+ {
+   "bindings": {
+     "i": "vim::InsertBefore"
+   }
+ },
+ {
+   "bindings": {
+     "o": "vim::InsertLineBelow"
+   }
+ },
+ {
+   "bindings": {
+     "shift-o": "vim::InsertLineAbove"
+   }
+ },
+ {
+   "bindings": {
+     "enter": "vim::Enter"
+   }
+ },
+ {
+   "bindings": {
+     "> >": "vim::Indent"
+   }
+ },
+ {
+   "bindings": {
+     "v i w": "vim::Word"
+   }
+ },
+ {
+   "bindings": {
+     "< <": "vim::Outdent"
+   }
+ },
+ {
+   "bindings": {
+     "%": "vim::Matching"
+   }
+ },
+ {
+   "bindings": {
+     "ctrl-a": "vim::Increment"
+   }
+ },
+ {
+   "bindings": {
+     "ctrl-x": "vim::Decrement"
+   }
+ },
+ {
+   "bindings": {
+     "cmd-z": "editor::Undo"
+   }
+ }
+]
