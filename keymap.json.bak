@@ -84,11 +84,6 @@
  },
  {
    "bindings": {
-     "enter": "vim::Enter"
-   }
- },
- {
-   "bindings": {
      "> >": "vim::Indent"
    }
  },
@@ -104,7 +99,7 @@
  },
  {
    "bindings": {
-     "%": "vim::Matching"
+     "?": "vim::Matching"
    }
  },
  {
@@ -120,6 +115,16 @@
  {
    "bindings": {
      "cmd-z": "editor::Undo"
+   }
+ },
+ {
+   "bindings": {
+     ".": "vim::Repeat"
+   }
+ },
+ {
+   "bindings": {
+     "g c c": "vim::Comment"
    }
  }
 ]

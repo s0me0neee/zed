@@ -60,7 +60,7 @@
 	},
 	"ui_font_family": "FiraCode Nerd Font",
 	"buffer_font_family": "FiraCode Nerd Font",
-	"base_keymap": "None",
+	"base_keymap": "Vscode",
 	"scrollbar": {
 		"axes": {
 			"horizontal": false,
