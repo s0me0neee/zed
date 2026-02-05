@@ -24,15 +24,8 @@
 		}
 	},
 	{
-		"context": "Workspace",
 		"bindings": {
-			"space g g": "git_panel::ToggleFocus"
-		}
-	},
-	{
-		"context": "Workspace",
-		"bindings": {
-			"space e": "project_panel::ToggleFocus"
+			"space g": "git_panel::ToggleFocus"
 		}
 	},
 	{
@@ -52,5 +45,17 @@
 		"bindings": {
 			"cmd-b": null
 		}
-	}
+	},
+ {
+  "context": "Workspace",
+  "bindings": {
+   "ctrl-/": "workspace::ToggleBottomDock"
+  }
+ },
+ {
+  "context": "Workspace",
+  "bindings": {
+   "cmd-j": null
+  }
+ }
 ]
