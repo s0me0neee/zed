@@ -7,10 +7,27 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "which_key": {
+    "delay_ms": 1000,
+    "enabled": false
+  },
+  "minimum_contrast_for_highlights": 50.0,
+  "current_line_highlight": "gutter",
+  "unnecessary_code_fade": 0.3,
+  "text_rendering_mode": "platform_default",
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "use_system_path_prompts": false,
+  "base_keymap": "None",
   "terminal": {
     "dock": "bottom"
   },
   "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
     "button": true,
     "model_parameters": []
   },
@@ -136,17 +153,17 @@
   "buffer_line_height": "comfortable",
   "buffer_font_weight": 400.0,
   "buffer_font_family": "FiraCode Nerd Font",
-  "icon_theme": "Catppuccin Mocha",
+  "icon_theme": "Material Icon Theme",
   "telemetry": {
     "diagnostics": false,
     "metrics": true
   },
-  "restore_on_startup": "none",
+  "restore_on_startup": "last_session",
   "use_system_prompts": false,
   "when_closing_with_no_tabs": "keep_window_open",
-  "ui_font_size": 16,
+  "ui_font_size": 16.0,
   "buffer_font_size": 15.0,
-  "theme": "Ayu Dark",
+  "theme": "One Dark Pro",
   "buffer_font_features": {
     "calt": true
   },
