@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "languages": {
+    "JSONC": {
+      "show_edit_predictions": true
+    }
+  },
   "which_key": {
     "delay_ms": 1000,
     "enabled": false
@@ -19,7 +24,7 @@
     "trust_all_worktrees": true
   },
   "use_system_path_prompts": false,
-  "base_keymap": "None",
+  "base_keymap": "VSCode",
   "terminal": {
     "dock": "bottom"
   },
