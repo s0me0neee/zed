@@ -75,6 +75,7 @@
         "dock": "bottom"
     },
     "agent": {
+        "expand_terminal_card": false,
         "dock": "right",
         "default_model": {
             "provider": "copilot_chat",
