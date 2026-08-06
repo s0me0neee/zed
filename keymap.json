@@ -1,5 +1,11 @@
 [
   {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-/": "terminal_panel::Toggle"
+    }
+  },
+  {
     "context": "VimControl && !menu && !Terminal",
     "bindings": {
       "i": [
@@ -15,8 +21,10 @@
         }
       ],
       "cmd-shift-p": "command_palette::Toggle",
-      "shift-h": "pane::ActivateNextItem",
-      "shift-l": "pane::ActivatePreviousItem",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      "] b": "pane::ActivateNextItem",
+      "[ b": "pane::ActivatePreviousItem",
       "backspace": "vim::WrappingLeft",
       "enter": "menu::Confirm",
       "tab": "vim::Tab",
@@ -65,6 +73,17 @@
       ],
       "/": "vim::Search",
       "space s g": "pane::DeploySearch",
+      "space f p": "projects::OpenRecent",
+      "space p": "projects::OpenRecent",
+      // LazyVim default leader keymaps
+      "space space": "file_finder::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space f n": "workspace::NewFile",
+      "space f t": "terminal_panel::Toggle",
+      "space f c": "zed::OpenSettingsFile",
+      "space f b": "tab_switcher::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space /": "pane::DeploySearch",
       "?": [
         "vim::Search",
         {
@@ -122,8 +141,7 @@
       ],
       ";": "vim::RepeatFind",
       ",": "vim::RepeatFindReversed",
-      "ctrl-h": "pane::GoBack",
-      "ctrl-l": "pane::GoForward",
+      // ctrl-o / ctrl-i already do GoBack / GoForward via Zed's built-in vim keymap
       "escape": "vim::SwitchToNormalMode",
       "v": "vim::ToggleVisual",
       "shift-v": "vim::ToggleVisualLine",
@@ -139,13 +157,79 @@
       "g shift-i": "editor::GoToImplementation",
       "g g": "vim::StartOfDocument",
       "space g b": "editor::BlameHover",
+      "space g g": "git_panel::ToggleFocus",
+      "] h": "editor::GoToHunk",
+      "[ h": "editor::GoToPreviousHunk",
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
       "g d": "editor::GoToDefinition",
       "g shift-d": "editor::GoToDeclaration",
       "g y": "editor::GoToTypeDefinition",
       "g f": "editor::OpenSelectedFilename",
+      "g shift-k": "editor::ShowSignatureHelp",
+      "g shift-o": "outline::Toggle",
       "g n": "vim::SelectNextMatch",
       "g shift-n": "vim::SelectPreviousMatch",
+      // gitsigns.nvim (gh prefix)
+      "g h shift-b": "git::Blame",
+      "g h d": "git::Diff",
+      "g h shift-d": "git::ReviewDiff",
+      "g h shift-r": "git::RestoreFile",
+      "g h r": "git::Restore",
+      "g h s": "git::ToggleStaged",
+      "g h shift-s": "git::StageFile",
+      "g h u": "git::UnstageFile",
       "space s s": "outline::Toggle",
+      "space s shift-s": "project_symbols::Toggle",
+      "space s r": [
+        "pane::DeploySearch",
+        {
+          "replace_enabled": true
+        }
+      ],
+      "space s k": "zed::OpenKeymap",
+      "space s b": "go_to_line::Toggle",
+      "space s shift-r": "workspace::ReopenLastPicker",
+      "space c f": "editor::Format",
+      "space c l": "lsp_tool::ToggleMenu",
+      "space c p": "markdown::OpenPreview",
+      "space x x": "diagnostics::Deploy",
+      "space q q": "workspace::CloseWindow",
+      // git (Snacks-style leader g, beyond blame/lazygit)
+      "space g d": "git::Diff",
+      "space g shift-d": "git::ReviewDiff",
+      "space g s": "git_panel::ActivateChangesTab",
+      "space g shift-s": "git_picker::ActivateStashTab",
+      "space g l": "git_panel::ActivateHistoryTab",
+      // debug (nvim-dap)
+      "space d b": "editor::ToggleBreakpoint",
+      "space d shift-b": "editor::EditLogBreakpoint",
+      "space d c": "debugger::Continue",
+      "space d i": "debugger::StepInto",
+      "space d o": "debugger::StepOut",
+      "space d shift-o": "debugger::StepOver",
+      "space d shift-p": "debugger::Pause",
+      "space d t": "debugger::Stop",
+      "space d l": "debugger::Restart",
+      "space d r": "debug_panel::ToggleFocus",
+      "space d u": "debug_panel::ToggleFocus",
+      "space d s": "debugger::ToggleSessionPicker",
+      "space d w": "debugger::ToggleExpandItem",
+      "space d e": "console::WatchExpression",
+      // custom leader keymaps ported from nvim config
+      "space shift-e": "workspace::ToggleLeftDock",
+      "space t": "theme_selector::Toggle",
+      "space c g": "agent::ToggleFocus",
+      "space r": "task::Spawn",
+      // UI toggles (<leader>u) — most LazyVim toggles here are settings.json-only in Zed;
+      // these are the ones that have a real runtime action to bind
+      "space u shift-c": "theme_selector::Toggle",
+      "space u b": "theme::ToggleMode",
+      "space u h": "editor::ToggleInlayHints",
+      "space u l": "editor::ToggleLineNumbers",
+      "space u w": "editor::ToggleSoftWrap",
+      "space u z": "workspace::ToggleAllDocks",
+      "space u shift-z": "vim::MaximizePane",
       "q": "vim::ToggleRecord",
       "shift-q": "vim::ReplayLastRecording",
       "@": "vim::PushReplayRegister",
@@ -213,8 +297,32 @@
     "bindings": {
       "space w v": "pane::SplitVertical",
       "space w s": "pane::SplitHorizontal",
+      "space w d": "pane::CloseActiveItem",
+      "space w m": "vim::MaximizePane",
       "space b d": "pane::CloseActiveItem",
       "space b o": "pane::CloseOtherItems",
+      "space b b": "pane::AlternateFile",
+      "space b j": "tab_switcher::Toggle",
+      "space b p": "pane::TogglePinTab",
+      "space b shift-p": [
+        "pane::CloseAllItems",
+        {
+          "close_pinned": false
+        }
+      ],
+      "space b r": [
+        "pane::CloseItemsToTheRight",
+        {
+          "close_pinned": false
+        }
+      ],
+      "space b l": [
+        "pane::CloseItemsToTheLeft",
+        {
+          "close_pinned": false
+        }
+      ],
+      "space ,": "tab_switcher::ToggleAll",
       "enter": "vim::NextLineStart",
       "g c c": "vim::ToggleComments",
       "i": "vim::InsertBefore",
@@ -280,6 +388,10 @@
       "shift-a": "vim::InsertAfter",
       "shift-j": "vim::JoinLines",
       "r": "vim::PushReplace",
+      "s": [
+        "vim::PushSneak",
+        {}
+      ],
       "escape": "vim::SwitchToNormalMode",
       ">": "vim::Indent",
       "<": "vim::Outdent",
@@ -338,8 +450,16 @@
       "u": "vim::Undo",
       "shift-u": "vim::UndoLastLine",
       "r": "vim::PushReplace",
-      "s": "vim::Substitute",
-      "shift-s": "vim::SubstituteLine",
+      // flash.nvim equivalent: Zed's built-in Sneak motion (s/S override vim's substitute char/line,
+      // same tradeoff flash.nvim makes in the real nvim config - use "cl"/"cc" for substitute instead)
+      "s": [
+        "vim::PushSneak",
+        {}
+      ],
+      "shift-s": [
+        "vim::PushSneakBackward",
+        {}
+      ],
       "\"": "vim::PushRegister",
       "ctrl-pagedown": "pane::ActivateNextItem",
       "ctrl-pageup": "pane::ActivatePreviousItem"
@@ -393,6 +513,10 @@
     "bindings": {
       "tab": "vim::Tab",
       "enter": "vim::Enter",
+      "s": [
+        "vim::PushSneak",
+        {}
+      ],
       "escape": "vim::ClearOperators",
     }
   },
@@ -427,9 +551,12 @@
       "t": "vim::Tag",
       "s": "vim::Sentence",
       "p": "vim::Paragraph",
-      "'": "vim::Quotes",
-      "`": "vim::BackQuotes",
-      "\"": "vim::DoubleQuotes",
+      // plain Quotes/BackQuotes/DoubleQuotes require the cursor to already be
+      // between the quotes; MiniQuotes adds mini.ai's "search the line, jump
+      // to the nearest quote pair" behavior, so bind the real quote keys to it
+      "'": "vim::MiniQuotes",
+      "`": "vim::MiniQuotes",
+      "\"": "vim::MiniQuotes",
       // "q": "vim::AnyQuotes",
       "q": "vim::MiniQuotes",
       "|": "vim::VerticalBars",
@@ -440,9 +567,8 @@
         }
       ],
       ")": "vim::Parentheses",
-      "b": "vim::Parentheses",
-      // "b": "vim::AnyBrackets",
-      // "b": "vim::MiniBrackets",
+      // mini.ai default: b = nearest of any bracket type, not just parens
+      "b": "vim::MiniBrackets",
       "[": [
         "vim::SquareBrackets",
         {
@@ -476,7 +602,9 @@
       ],
       "f": "vim::Method",
       "c": "vim::Class",
-      "e": "vim::EntireFile"
+      // mini.ai custom_textobjects: e = word-with-case (subword), g = entire buffer
+      "e": "vim::Subword",
+      "g": "vim::EntireFile"
     }
   },
   {
@@ -876,6 +1004,17 @@
     }
   },
   {
+    // direct pane navigation (no ctrl-w prefix), works everywhere including the terminal
+    // (this overrides the shell's ctrl-h backspace, ctrl-j enter, ctrl-k kill-line, ctrl-l clear-screen)
+    "context": "VimControl && !menu || !Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+  {
     "context": "VimControl && !menu || !Editor && !Terminal",
     "bindings": {
       // window related commands (ctrl-w X)
@@ -952,31 +1091,39 @@
     }
   },
   {
-    // netrw compatibility
+    // neo-tree keybind compatibility (netrw picks left as fallback for anything neo-tree doesn't define)
     "context": "ProjectPanel && not_editing",
     "bindings": {
       ":": "command_palette::Toggle",
       "%": "project_panel::NewFile",
       "/": "project_panel::NewSearchInDirectory",
-      "d": "project_panel::NewDirectory",
       "enter": "project_panel::OpenPermanent",
       "backspace": "project_panel::SelectParent",
       "escape": "vim::ToggleProjectPanelFocus",
+      "space e": "workspace::ToggleLeftDock",
       "h": "project_panel::CollapseSelectedEntry",
       "j": "vim::MenuSelectNext",
       "k": "vim::MenuSelectPrevious",
       "down": "vim::MenuSelectNext",
       "up": "vim::MenuSelectPrevious",
       "left": "project_panel::CollapseSelectedEntry",
-      "l": "project_panel::ExpandSelectedEntry",
-      "shift-d": "project_panel::Delete",
-      "shift-r": "project_panel::Rename",
+      "l": "project_panel::OpenPermanent",
       "t": "project_panel::OpenPermanent",
       "v": "project_panel::OpenSplitVertical",
       "o": "project_panel::OpenSplitHorizontal",
-      "p": "project_panel::Open",
-      "x": "project_panel::RevealInFileManager",
       "s": "workspace::OpenWithSystem",
+      // neo-tree: a = add, A = add_directory, d = delete, shift-d = trash (soft delete),
+      // y = copy, x = cut, p = paste, r/shift-r = rename, shift-x = reveal in file manager (bumped off x)
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "d": "project_panel::Delete",
+      "shift-d": "project_panel::Trash",
+      "y": "project_panel::Copy",
+      "x": "project_panel::Cut",
+      "p": "project_panel::Paste",
+      "r": "project_panel::Rename",
+      "shift-r": "project_panel::Rename",
+      "shift-x": "project_panel::RevealInFileManager",
       "z d": "project_panel::CompareMarkedFiles",
       "] c": "project_panel::SelectNextGitEntry",
       "[ c": "project_panel::SelectPrevGitEntry",
@@ -1167,7 +1314,7 @@
     }
   },
   {
-    "context": "os != macos && Editor && edit_prediction_conflict",
+    "context": "os != macos && Editor && (edit_prediction && (showing_completions || in_leading_whitespace))",
     "bindings": {
       // alt-l is provided as an alternative to tab/alt-tab. and will be displayed in the UI. This
       // is because alt-tab may not be available, as it is often used for window switching on Linux
