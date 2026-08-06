@@ -412,7 +412,7 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       "enter": "editor::Newline",
       "backspace": "editor::Backspace",
