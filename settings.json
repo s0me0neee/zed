@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "proxy": "",
     "markdown_preview_font_size": 16.0,
     "agent_ui_font_size": 17.0,
     "agent_ui_font_family": "JetBrainsMono Nerd Font",
@@ -30,7 +31,7 @@
     "multi_cursor_modifier": "cmd_or_ctrl",
     "markdown_preview_code_font_family": "Maple Mono",
     "markdown_preview_font_family": "JetBrainsMono Nerd Font",
-    "agent_buffer_font_size": 16.0,
+    "agent_buffer_font_size": 15.0,
     "cli_default_open_behavior": "new_window",
     "agent_servers": {
         "claude-acp": {
@@ -218,8 +219,8 @@
     "restore_on_startup": "last_workspace",
     "use_system_prompts": false,
     "when_closing_with_no_tabs": "keep_window_open",
-    "ui_font_size": 18.0,
-    "buffer_font_size": 18.0,
+    "ui_font_size": 17.0,
+    "buffer_font_size": 16.0,
     "theme": "Kanagawa Wave",
     "buffer_font_features": {
         "calt": true
