@@ -35,7 +35,7 @@
     "agent_servers": {
         "claude-acp": {
             "default_config_options": {
-                "effort": "high",
+                "effort": "xhigh",
                 "mode": "bypassPermissions",
                 "model": "sonnet"
             },
@@ -69,6 +69,8 @@
     "use_system_path_prompts": false,
     "base_keymap": "VSCode",
     "terminal": {
+        "font_family": "JetBrainsMono Nerd Font",
+        "font_size": 15.0,
         "cursor_shape": "bar",
         "dock": "bottom"
     },
@@ -216,7 +218,7 @@
     "use_system_prompts": false,
     "when_closing_with_no_tabs": "keep_window_open",
     "ui_font_size": 16.0,
-    "buffer_font_size": 15.0,
+    "buffer_font_size": 16.0,
     "theme": "Kanagawa Wave",
     "buffer_font_features": {
         "calt": true
