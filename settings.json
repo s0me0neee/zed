@@ -7,6 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "markdown_preview_font_size": 15.0,
+    "agent_ui_font_size": 16.0,
     "agent_ui_font_family": "JetBrainsMono Nerd Font",
     "edit_predictions": {
         "open_ai_compatible_api": {
@@ -28,11 +30,12 @@
     "multi_cursor_modifier": "cmd_or_ctrl",
     "markdown_preview_code_font_family": "Maple Mono",
     "markdown_preview_font_family": "JetBrainsMono Nerd Font",
-    "agent_buffer_font_size": 16.0,
+    "agent_buffer_font_size": 13.0,
     "cli_default_open_behavior": "new_window",
     "agent_servers": {
         "claude-acp": {
             "default_config_options": {
+                "effort": "high",
                 "mode": "bypassPermissions",
                 "model": "sonnet"
             },
@@ -59,7 +62,7 @@
     "minimum_contrast_for_highlights": 50.0,
     "current_line_highlight": "gutter",
     "unnecessary_code_fade": 0.3,
-    "text_rendering_mode": "platform_default",
+    "text_rendering_mode": "grayscale",
     "session": {
         "trust_all_worktrees": true
     },
@@ -222,10 +225,10 @@
         "background.appearance": "transparent",
         "background": "#101014a9",
         "panel.background": "#00000015",
-        "editor.background": "#00000015",
-        "tab_bar.background": "#00000000",
+        "editor.background": "#00000000",
+        "tab_bar.background": "#00000015",
         "terminal.background": "#00000000",
-        "toolbar.background": "#00000000",
+        "toolbar.background": "#00000015",
         "tab.inactive_background": "#00000000",
         "tab.active_background": "#3f3f4650",
         "border": "#00000000",

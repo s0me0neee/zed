@@ -145,7 +145,7 @@
       "escape": "vim::SwitchToNormalMode",
       "v": "vim::ToggleVisual",
       "shift-v": "vim::ToggleVisualLine",
-      "ctrl-v": "vim::ToggleVisualBlock",
+      "ctrl-v": "editor::Paste",
       "shift-k": "editor::Hover",
       "shift-r": "vim::ToggleReplace",
       "0": "vim::StartOfLine",
@@ -416,7 +416,9 @@
     "bindings": {
       "enter": "editor::Newline",
       "backspace": "editor::Backspace",
-      "escape": "vim::NormalBefore"
+      "escape": "vim::NormalBefore",
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste"
     }
   },
   {
@@ -482,18 +484,15 @@
   {
     "context": "vim_mode == replace",
     "bindings": {
-      "ctrl-c": "vim::NormalBefore",
+      "ctrl-c": "editor::Copy",
       "ctrl-[": "vim::NormalBefore",
       "escape": "vim::NormalBefore",
       "ctrl-k": [
         "vim::PushDigraph",
         {}
       ],
-      "ctrl-v": [
-        "vim::PushLiteral",
-        {}
-      ],
-      "ctrl-shift-v": "editor::Paste", // note: this is *very* similar to ctrl-v in vim, but ctrl-shift-v on linux is the typical shortcut for paste when ctrl-v is already in use.
+      "ctrl-v": "editor::Paste",
+      "ctrl-shift-v": "editor::Paste",
       "ctrl-q": [
         "vim::PushLiteral",
         {}
@@ -518,6 +517,8 @@
         {}
       ],
       "escape": "vim::ClearOperators",
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
     }
   },
   {
@@ -529,7 +530,7 @@
   {
     "context": "vim_mode == operator",
     "bindings": {
-      "ctrl-c": "vim::ClearOperators",
+      "ctrl-c": "editor::Copy",
       "ctrl-[": "vim::ClearOperators",
       "escape": "vim::ClearOperators",
       "g c": "vim::Comment"
@@ -1295,7 +1296,7 @@
   {
     "context": "GitCommit > Editor && VimControl && vim_mode == normal",
     "bindings": {
-      "ctrl-c": "menu::Cancel",
+      "ctrl-c": "editor::Copy",
       "escape": "menu::Cancel"
     }
   },
