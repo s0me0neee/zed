@@ -6,6 +6,12 @@
     }
   },
   {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-/": "terminal_panel::Toggle"
+    }
+  },
+  {
     "context": "VimControl && !menu && !Terminal",
     "bindings": {
       "i": [
