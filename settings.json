@@ -62,7 +62,7 @@
     "minimum_contrast_for_highlights": 50.0,
     "current_line_highlight": "gutter",
     "unnecessary_code_fade": 0.3,
-    "text_rendering_mode": "grayscale",
+    "text_rendering_mode": "platform_default",
     "session": {
         "trust_all_worktrees": true
     },
@@ -207,7 +207,7 @@
     "buffer_line_height": "comfortable",
     "buffer_font_weight": 450.0,
     "buffer_font_family": "Maple Mono",
-    "icon_theme": "Material Icon Theme",
+    "icon_theme": "Catppuccin Frappé",
     "telemetry": {
         "diagnostics": false,
         "metrics": true
